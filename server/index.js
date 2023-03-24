@@ -36,3 +36,17 @@ app.use('/client',clientRoutes);
 app.use('/general', generalRoutes);
 app.use('/management', managementRoutes);
 app.use('/sales', salesRoutes);
+
+
+const PORT = process.env.PORT || 5001;
+
+mongoose.connect(process.env.MONGO_URL, {
+    useNewUrlParser : true,
+    useUnifiedTopology : true,
+}).then(() => {
+    console.log('success');
+    app.listen(PORT)
+    console.log('app listening in port ', PORT);
+}).catch(err => {
+    console.log(err);
+})
