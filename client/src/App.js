@@ -5,6 +5,8 @@ import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { themeSettings } from "theme";
+import Dashboard from "scenes/dashboard";
+import Layout from "scenes/layout";
 
 function App() {
   // grabbing the state from the global mode
@@ -25,7 +27,6 @@ function App() {
               <Route path = "/" element = {<Navigate to={'/dashboard'} replace/>}/>
               <Route path = "/dashboard" element = {<Dashboard />}/>
             </Route>
-
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
