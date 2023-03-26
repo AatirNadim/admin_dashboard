@@ -8,7 +8,7 @@ import profileImage from 'assets/profile.jpg'
 import { AppBar, IconButton, InputBase, Toolbar, useTheme } from '@mui/material'
 
 
-const Navbar = () => {
+const Navbar = ({isSideBarOpen, setIsSideBarOpen}) => {
   const dispatch = useDispatch();
   const theme = useTheme();
   return (
@@ -28,7 +28,7 @@ const Navbar = () => {
       >
         {/* left side */}
         <FlexBetween  sx = {{  }} >
-          <IconButton onClick={() => console.log('open/close sidebar')} >
+          <IconButton onClick={() => setIsSideBarOpen(true)} >
             <MenuIcon  ></MenuIcon>
           </IconButton>
           <FlexBetween
