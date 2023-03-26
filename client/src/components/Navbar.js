@@ -28,7 +28,7 @@ const Navbar = ({isSideBarOpen, setIsSideBarOpen}) => {
       >
         {/* left side */}
         <FlexBetween  sx = {{  }} >
-          <IconButton onClick={() => setIsSideBarOpen(true)} >
+          <IconButton onClick={() => setIsSideBarOpen(!isSideBarOpen)} >
             <MenuIcon  ></MenuIcon>
           </IconButton>
           <FlexBetween

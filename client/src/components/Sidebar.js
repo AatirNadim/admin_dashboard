@@ -58,7 +58,7 @@ const Sidebar = ({
                     COMNIVATE
                   </Typography>
                 </Box>
-                {isNonMobile && (
+                {!isNonMobile && (
                   <IconButton onClick={() => setIsSideBarOpen(!isSideBarOpen)}>
                     <ChevronLeft />
                   </IconButton>
