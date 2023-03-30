@@ -19,7 +19,7 @@ const Layout = () => {
 
   return (
     <Box width='100%' height='100%' display={isNonMobile ? 'flex' : 'block'} >
-      <Sidebar  user = {data || {}} isNonMobile={isNonMobile} drawerWidth='250px' isSideBarOpen={isSideBarOpen}
+      <Sidebar  user = {data || {}} isNonMobile={isNonMobile} drawerWidth='270px' isSideBarOpen={isSideBarOpen}
         setIsSideBarOpen={setIsSideBarOpen}
       />
       <Box backgroundColor='' flexGrow={1}>

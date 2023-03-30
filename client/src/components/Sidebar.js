@@ -119,11 +119,15 @@ const Sidebar = ({
               }
             </List>
           </Box>
-          <Box position='absolute' bottom='2rem'
-            sx={{ backgroundColor: 'red' }}
+
+          {/* user information */}
+
+          {/* changed here, deviated here */}
+          <Box position='relative' bottom='0.5rem'
+            sx={{ backgroundColor: '' }}
           >
             <Divider />
-            <FlexBetween textTransform='none' gap='1rem' m='1.5rem 2rem 0rem 3rem ' >
+            <FlexBetween textTransform='none' gap='1rem' m='1rem 2rem 0rem 3rem ' >
               <Box component='img' alt='profile' src={profileImage}
                 height='40px' width='40px' borderRadius='50%'
                 sx={{
