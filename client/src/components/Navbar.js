@@ -8,7 +8,7 @@ import profileImage from 'assets/profile.jpg'
 import { AppBar, IconButton, InputBase, Toolbar, useTheme } from '@mui/material'
 
 
-const Navbar = ({isSideBarOpen, setIsSideBarOpen}) => {
+const Navbar = ({user, isSideBarOpen, setIsSideBarOpen}) => {
   const dispatch = useDispatch();
   const theme = useTheme();
   return (

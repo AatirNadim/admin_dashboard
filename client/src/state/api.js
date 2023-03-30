@@ -7,13 +7,12 @@ export const api = createApi({
     reducerPath : 'adminApi',
     tagTypes : ['user'],
     // api calls we will make
-    endpoints : (build) => {
+    endpoints : (build) => ({
         getUser : build.query({
             query : (id) => `general/user/${id}`,
             providesTags : ['user']
         })
-    }
-
+    })
 })
 
 

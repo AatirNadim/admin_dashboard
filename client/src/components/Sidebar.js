@@ -3,7 +3,7 @@ import {
   Box, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon,
   ListItemText, Typography, useTheme
 } from '@mui/material'
-import { ChevronLeft, ChevronRight, ChevronRightOutlined } from '@mui/icons-material'
+import { ChevronLeft, ChevronRight, ChevronRightOutlined, SettingsOutlined } from '@mui/icons-material'
 
 import { useLocation, useNavigate } from 'react-router-dom'
 import FlexBetween from './FlexBetween'
@@ -11,7 +11,7 @@ import profileImage from '../assets/profile.jpg'
 import { navItems } from 'assets/NavItems'
 
 const Sidebar = ({
-  isNonMobile, drawerWidth, isSideBarOpen, setIsSideBarOpen
+  user, isNonMobile, drawerWidth, isSideBarOpen, setIsSideBarOpen
 }) => {
 
   const { pathname } = useLocation();
@@ -24,10 +24,10 @@ const Sidebar = ({
     // console.log(pathname)
   }, [pathname])
   return (
-    <Box component='nav' 
-    sx = {{
-      
-    }}
+    <Box component='nav'
+      sx={{
+
+      }}
     >
       {isSideBarOpen && (
         <Drawer open={isSideBarOpen}
@@ -100,16 +100,16 @@ const Sidebar = ({
                         >
                           {icon}
                         </ListItemIcon>
-                        <ListItemText primary = {text}
-                        sx = {{
+                        <ListItemText primary={text}
+                          sx={{
 
-                        }}
+                          }}
                         >
                           {text}
                         </ListItemText>
                         {
                           active === lcText && (
-                            <ChevronRightOutlined sx = {{ ml : 'auto'}} />
+                            <ChevronRightOutlined sx={{ ml: 'auto' }} />
                           )
                         }
                       </ListItemButton>
@@ -118,6 +118,34 @@ const Sidebar = ({
                 })
               }
             </List>
+          </Box>
+          <Box position='absolute' bottom='2rem'
+            sx={{ backgroundColor: 'red' }}
+          >
+            <Divider />
+            <FlexBetween textTransform='none' gap='1rem' m='1.5rem 2rem 0rem 3rem ' >
+              <Box component='img' alt='profile' src={profileImage}
+                height='40px' width='40px' borderRadius='50%'
+                sx={{
+                  objectFit: 'cover',
+                }}
+              />
+              <Box textAlign='left' >
+                <Typography fontWeight='bold' fontSize='0.9rem' sx={{
+                  color: theme.palette.secondary[100]
+                }}>
+                  {user.name}
+                </Typography>
+                <Typography fontSize='0.8rem' sx={{
+                  color: theme.palette.secondary[200]
+                }}>
+                  {user.occupation}
+                </Typography>
+              </Box>
+              <SettingsOutlined sx = {{ color : theme.palette.secondary[200], fontSize : '25px'
+              
+            }} />
+            </FlexBetween>
           </Box>
         </Drawer>
       )}
