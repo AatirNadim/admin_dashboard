@@ -18,19 +18,37 @@ const Product = ({ _id, name, description, price, rating, category, supply, stat
       }}
     >
       <CardContent>
-        <Typography 
-          sx = {{
-            fontSize: 14, 
-            color : theme.palette.secondary[700],
+        <Typography
+          sx={{
+            fontSize: 14,
+            color: theme.palette.secondary[700],
           }}
           gutterBottom
         >
           {category}
         </Typography>
         <Typography variant='h5' component='div'  > {name} </Typography>
-        <Typography color={theme.palette.secondary[400]} mb ='1.5rem'>$ {Number(price).toFixed(2)} </Typography>
-        <Rating value = {rating} readOnly></Rating>
+        <Typography color={theme.palette.secondary[400]} mb='1.5rem'>$ {Number(price).toFixed(2)} </Typography>
+        <Rating value={rating} readOnly></Rating>
+        <Typography variant='body'>{description}</Typography>
       </CardContent>
+      <CardActions>
+        <Button variant='primary' onClick={() => {
+          setIsExpanded(!isExpanded)
+        }}>See more text</Button>
+      </CardActions>
+      <Collapse in={isExpanded} timeout='auto' unmountOnExit
+        sx={{
+          color: theme.palette.neutral[300],
+        }}
+      >
+        <CardContent>
+          <Typography  >id : {_id}</Typography>
+          <Typography  >Supply_Left : {supply}</Typography>
+          <Typography  >Yearly sales this year : {stat.yearlySalesTotal}</Typography>
+          <Typography  >Yearly units sold this year : {stat.yearlyTotalSoldUnits}</Typography>
+        </CardContent>
+      </Collapse>
     </Card>
   );
 }
@@ -61,8 +79,16 @@ function Products() {
           >
 
             {
-              data.map(() => {
-
+              data.map(({ _id, name, description, price, rating, category, supply, stat }) => {
+                return <Product key={_id}
+                  _id={_id}
+                  name={name}
+                  description={description}
+                  price={price}
+                  rating={rating}
+                  category={category}
+                  supply={supply}
+                  stat={stat} />
               })
             }
           </Box>
