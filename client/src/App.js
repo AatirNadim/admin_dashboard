@@ -7,7 +7,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { themeSettings } from "theme";
 import Dashboard from "scenes/dashboard";
 import Layout from "scenes/layout";
-import Products from "scenes/products";
+import Products from "./scenes/Products";
 
 function App() {
   // grabbing the state from the global mode
