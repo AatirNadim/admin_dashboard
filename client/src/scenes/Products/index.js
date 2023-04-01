@@ -29,7 +29,7 @@ const Product = ({ _id, name, description, price, rating, category, supply, stat
         </Typography>
         <Typography variant='h5' component='div'  > {name} </Typography>
         <Typography color={theme.palette.secondary[400]} mb='1.5rem'>$ {Number(price).toFixed(2)} </Typography>
-        <Rating value={rating} readOnly></Rating>
+        <Rating   value={rating} readOnly></Rating>
         <Typography variant='body'>{description}</Typography>
       </CardContent>
       <CardActions>
@@ -55,7 +55,12 @@ const Product = ({ _id, name, description, price, rating, category, supply, stat
 
 function Products() {
   const { data, isLoading, error } = useGetProductsQuery();
-  const isNonMobile = useMediaQuery(`min-width : 1000px`);
+  // if(data) console.log(typeof data);
+  const isNonMobile = useMediaQuery(`(min-width : 1000px)`);
+  React.useEffect(() => {
+    console.log('mobile screen ', !isNonMobile);
+  }, [isNonMobile])
+  
   // console.log('in the products component')
   // console.log('data -->\n', data);
   return (

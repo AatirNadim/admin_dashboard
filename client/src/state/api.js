@@ -6,7 +6,7 @@ export const api = createApi({
     }),
     reducerPath : 'adminApi',
     // may be problematic
-    tagTypes : ['user', 'products'],
+    tagTypes : ['user', 'products', 'customers'],
     // api calls we will make
     endpoints : (build) => ({
         getUser : build.query({
@@ -17,6 +17,10 @@ export const api = createApi({
             query : () => `client/products`,
             providesTags : ['products'],
         }),
+        getCustomers : build.query({
+            query : () => `client/customers`,
+            providesTags : ['customers'],
+        }),
         // aatir : build.query({
         //     query : () => `client/products`,
         //     providesTags : ['products'],
@@ -25,4 +29,4 @@ export const api = createApi({
 })
 
 
-export const { useGetUserQuery, useGetProductsQuery } = api;
+export const { useGetUserQuery, useGetProductsQuery, useGetCustomersQuery } = api;

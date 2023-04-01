@@ -13,9 +13,9 @@ const Layout = () => {
   const userID = useSelector((state) => state.global.userId);
   const { data } = useGetUserQuery(userID); 
 
-  console.log('data from the backend --> \n', data);
+  // console.log('data from the backend --> \n', data);
 
-  console.log(isNonMobile);
+
 
   return (
     <Box width='100%' height='100%' display={isNonMobile ? 'flex' : 'block'} >
