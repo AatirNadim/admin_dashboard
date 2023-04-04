@@ -7,7 +7,7 @@ import { DataGrid } from '@mui/x-data-grid';
 const Customers = () => {
   const theme = useTheme();
   const { data, isLoading, error } = useGetCustomersQuery();
-  console.log('data in the customers section ', data);
+  // console.log('data in the customers section ', data); 
 
   const columns = [
     {
@@ -54,30 +54,29 @@ const Customers = () => {
     <Box m='1.5rem 2.5rem' >
       <Header title='CUSTOMERS' subTitle='List of Customers' />
       <Box mt='40px' height='75vh' 
-        sx = {{
-          '& .MuiDataGrid-root' : {
-            border :'none',
+        sx={{
+          "& .MuiDataGrid-root": {
+            border: "none",
           },
-          '& .MuiDataGrid-cell' : {
-            borderBottom : 'none',
+          "& .MuiDataGrid-cell": {
+            borderBottom: "none",
           },
-          '& .MuiDataGrid-columnHeaders' : {
-            backgroundColor : theme.palette.background.alt,
-            color : theme.palette.secondary[100],
-            borderBottom : 'none',
+          "& .MuiDataGrid-columnHeaders": {
+            backgroundColor: theme.palette.background.alt,
+            color: theme.palette.secondary[100],
+            borderBottom: "none",
           },
-          '& .MuiDataGrid-virtualScoller' : {
-            backgroundColor : theme.palette.primary.light,
+          "& .MuiDataGrid-virtualScroller": {
+            backgroundColor: theme.palette.primary.light,
           },
-          '& .MuiDataGrid-footerContainer' :  {
-            backgroundColor : theme.palette.background.alt,
-            color : theme.palette.secondary[100],
-            borderTop : 'none',
+          "& .MuiDataGrid-footerContainer": {
+            backgroundColor: theme.palette.background.alt,
+            color: theme.palette.secondary[100],
+            borderTop: "none",
           },
-          '& .MuiDataGrid-toolbarContainer .MuiButton-text' : {
-            color : `${theme.palette.secondary[200]} !important`,
-          }
-
+          "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+            color: `${theme.palette.secondary[200]} !important`,
+          },
         }}
       
       

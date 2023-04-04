@@ -9,6 +9,8 @@ import Dashboard from "scenes/dashboard";
 import Layout from "scenes/layout";
 import Products from "./scenes/Products";
 import Customers from "scenes/Customers";
+import Transactions from "scenes/transactions";
+
 
 function App() {
   // grabbing the state from the global mode
@@ -30,6 +32,7 @@ function App() {
               <Route path = "/dashboard" element = {<Dashboard />}/>
               <Route path = "/products" element = {<Products />}/>
               <Route path = "/customers" element = {<Customers />}/>
+              <Route path = "/transactions" element = {<Transactions />}/>
             </Route>
 
           </Routes>

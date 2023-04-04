@@ -9,6 +9,7 @@ import Header from '../../components/Header';
 const Product = ({ _id, name, description, price, rating, category, supply, stat }) => {
   const theme = useTheme();
   const [isExpanded, setIsExpanded] = React.useState(false);
+  // console.log(stat);
   return (
     <Card
       sx={{
@@ -57,9 +58,9 @@ function Products() {
   const { data, isLoading, error } = useGetProductsQuery();
   // if(data) console.log(typeof data);
   const isNonMobile = useMediaQuery(`(min-width : 1000px)`);
-  React.useEffect(() => {
-    console.log('mobile screen ', !isNonMobile);
-  }, [isNonMobile])
+  // React.useEffect(() => {
+  //   console.log('mobile screen ', !isNonMobile);
+  // }, [isNonMobile])
   
   // console.log('in the products component')
   // console.log('data -->\n', data);
@@ -93,7 +94,7 @@ function Products() {
                   rating={rating}
                   category={category}
                   supply={supply}
-                  stat={stat} />
+                  stat={stat[0]} />
               })
             }
           </Box>
